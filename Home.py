@@ -5,9 +5,10 @@ from random import randint
 
 class Home(object):
 
-	monsterList = []
+	
 
 	def __init__(self):
+		self.monsterList = []
 		for x in range(10):
 			tmp = randint(1, 4)
 			if tmp == 1:
@@ -19,7 +20,11 @@ class Home(object):
 			elif tmp == 4:
 				self.monsterList.append(Monster.Werewolf())
 
-	def getList(self):
+
+	"""'''''''''''''''''''''''''''''''''''''''''''''
+	A method to print the Home's monster list for testing
+	'''''''''''''''''''''''''''''''''''''''''''''"""
+	def printList(self):
 		print()
 		print('-------- HOME -------------')
 		for x in self.monsterList:
@@ -28,9 +33,17 @@ class Home(object):
 		print()
 
 
-a = Home()
-a.getList()
-b = Home()
-b.getList()
-c = Home()
-c.getList()
+	"""'''''''''''''''''''''''''''''''''''''''''''''
+	A method to get the Home's monster list
+	'''''''''''''''''''''''''''''''''''''''''''''"""
+	def getList(self):
+		return self.monsterList
+
+
+	"""'''''''''''''''''''''''''''''''''''''''''''''
+	A method to set the Home's monster list
+	'''''''''''''''''''''''''''''''''''''''''''''"""
+	def setList(self, newList):
+		self.monsterList = newList
+
+

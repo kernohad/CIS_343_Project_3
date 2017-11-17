@@ -26,7 +26,7 @@ class Weapon(object):
 
 
 """'''''''''''''''''''''''''''''''''''''''''''''
-	An abstract class to maintain Weapon data
+	A class to maintain HershyKiss data
 '''''''''''''''''''''''''''''''''''''''''''''"""
 class HershyKisses(Weapon):
 	def __init__(self):
@@ -36,7 +36,7 @@ class HershyKisses(Weapon):
 
 	
 """'''''''''''''''''''''''''''''''''''''''''''''
-	An abstract class to maintain Weapon data
+	A class to maintain SourStraw data
 '''''''''''''''''''''''''''''''''''''''''''''"""
 class SourStraWS(Weapon):
 	def __init__(self):
@@ -46,7 +46,7 @@ class SourStraWS(Weapon):
 
 	
 """'''''''''''''''''''''''''''''''''''''''''''''
-	An abstract class to maintain Weapon data
+	A class to maintain ChocolateBar data
 '''''''''''''''''''''''''''''''''''''''''''''"""
 class ChocolateBars(Weapon):
 	def __init__(self):
@@ -57,7 +57,7 @@ class ChocolateBars(Weapon):
 
 
 """'''''''''''''''''''''''''''''''''''''''''''''
-	An abstract class to maintain Weapon data
+	A class to maintain NerdBomb data
 '''''''''''''''''''''''''''''''''''''''''''''"""
 class NerdBombs(Weapon):
 	def __init__(self):
