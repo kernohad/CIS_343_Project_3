@@ -6,11 +6,14 @@ from random import randint
 class Home(object):
 
 	
-
+	"""'''''''''''''''''''''''''''''''''''''''''''''
+	Initialize the Home object
+	Creates a list of 10 random monsters for the Home
+	'''''''''''''''''''''''''''''''''''''''''''''"""
 	def __init__(self):
 		self.monsterList = []
 		for x in range(10):
-			tmp = randint(1, 4)
+			tmp = randint(1, 5)
 			if tmp == 1:
 				self.monsterList.append(Monster.Zombie())
 			elif tmp == 2:
@@ -19,6 +22,8 @@ class Home(object):
 				self.monsterList.append(Monster.Ghoul())
 			elif tmp == 4:
 				self.monsterList.append(Monster.Werewolf())
+			elif tmp == 5:
+				self.monsterList.append(Monster.person())
 
 
 	"""'''''''''''''''''''''''''''''''''''''''''''''
@@ -26,10 +31,10 @@ class Home(object):
 	'''''''''''''''''''''''''''''''''''''''''''''"""
 	def printList(self):
 		print()
-		print('-------- HOME -------------')
+		print('---------- Monsters ----------')
 		for x in self.monsterList:
 			print(x.getType())
-		print('---------------------------')
+		print('--------------------------')
 		print()
 
 

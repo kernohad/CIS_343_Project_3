@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from abc import ABCMeta, abstractmethod
-import random
+from random import randint
 
 """'''''''''''''''''''''''''''''''''''''''''''''
 	An abstract class to maintain Weapon data
@@ -24,6 +24,21 @@ class Weapon(object):
 			print("False")
 			return False
 
+	def getName(self):
+		return self.name
+
+	def getAttackModifier(self):
+		return self.attackModifier
+
+	def getTimesUsed(self):
+		return self.timesUsed
+
+	def setTimesUsed(self, times):
+		self.timesUsed += times
+
+	def getMaxUse(self):
+		return self.MAX_USE
+
 
 """'''''''''''''''''''''''''''''''''''''''''''''
 	A class to maintain HershyKiss data
@@ -41,7 +56,7 @@ class HershyKisses(Weapon):
 class SourStraWS(Weapon):
 	def __init__(self):
 		self.name = "Sour Straw"
-		self.attackModifier = random.uniform(1, 1.75)
+		self.attackModifier = randint(100,175)/100
 		self.MAX_USE = 2
 
 	
@@ -51,7 +66,7 @@ class SourStraWS(Weapon):
 class ChocolateBars(Weapon):
 	def __init__(self):
 		self.name = "Chocolate Bar"
-		self.attackModifier = random.uniform(2, 2.4)
+		self.attackModifier = randint(200, 240)/100
 		self.MAX_USE = 4
 
 
@@ -62,7 +77,7 @@ class ChocolateBars(Weapon):
 class NerdBombs(Weapon):
 	def __init__(self):
 		self.name = "Nerd Bomb"
-		self.attackModifier = random.uniform(3.5, 5)
+		self.attackModifier = randint(350, 500)/100
 		self.MAX_USE = 1
 
 	
