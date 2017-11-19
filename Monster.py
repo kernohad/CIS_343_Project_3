@@ -17,6 +17,18 @@ class Monster(object):
 
 	def getType(self):
 		return self.monsterType
+
+	def getAttack(self):
+		return self.attack
+
+	def setAttack(self, newAttack):
+		self.attack = newAttack
+
+	def getHealth(self):
+		return self.health
+
+	def setHealth(self, newHealth):
+		self.health = newHealth
 		
 
 """'''''''''''''''''''''''''''''''''''''''''''''

@@ -23,7 +23,7 @@ class Home(object):
 			elif tmp == 4:
 				self.monsterList.append(Monster.Werewolf())
 			elif tmp == 5:
-				self.monsterList.append(Monster.person())
+				self.monsterList.append(Monster.Person())
 
 
 	"""'''''''''''''''''''''''''''''''''''''''''''''
