@@ -40,4 +40,15 @@ class Player(object):
 	def setInventory(self, newInventory):
 		self.inventory = newInventory
 
+	def getHealth(self):
+		return self.health
+
+	def setHealth(self, newHealth):
+		self.health = newHealth
+
+	def getAttack(self):
+		return self.attack
+
+	def setAttack(self, newAttack):
+		self.attack = newAttack
 

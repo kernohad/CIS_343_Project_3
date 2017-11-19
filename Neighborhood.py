@@ -17,5 +17,8 @@ class Neighborhood(object):
 			for col in range(self.GRID_SIZE):
 				tmp = Home.Home()
 				self.grid[row].append(tmp)
+
+	def getGrid(self):
+		return self.grid
  
 
