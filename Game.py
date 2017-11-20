@@ -1,12 +1,12 @@
 import Player
 import Neighborhood
-import Observer
+from Observer import Observer
 
 class Game(Observer):
 
 	def __init__(self):
 		self.player = Player.Player()
-		self.neighborhood = Neighborhood.Neighborhood()
+		self.neighborhood = Neighborhood.Neighborhood(self)
 		self.currentCol = 0
 		self.currentRow = 0
 		self.currentHome = self.neighborhood.getGrid()[self.currentRow][self.currentCol]
@@ -81,6 +81,4 @@ class Game(Observer):
 	def update(self):
 		self.totalMonsters -= 1
 
-a=Game()
-print(a.getTotalMonsters())
 

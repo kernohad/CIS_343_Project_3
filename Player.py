@@ -44,7 +44,6 @@ class Player(object):
 
 	def isPlayerDead(self):
 		if self.health <= 0:
-			print('You died')
 			return True
 		else:
 			return False

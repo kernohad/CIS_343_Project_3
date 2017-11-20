@@ -4,10 +4,11 @@ if __name__ == "__main__":
 
 	game = Game.Game()
 
-  for x in range(len(game.getNeighborhood().getGrid())):
-      for y in range(len(game.getNeighborhood().getGrid()[x])):
-        super().__init__()
-        game.getNeighborhood().getGrid()[x][y].add_observer(game)
+	# for x in range(len(game.getNeighborhood().getGrid())):
+	# 	for y in range(len(game.getNeighborhood().getGrid()[x])):
+	# 		super().__init__()
+	# 		game.getNeighborhood().getGrid()[x][y].add_observer(game)
+
  
 
 	while game.isGameOver() == False:
@@ -101,12 +102,13 @@ if __name__ == "__main__":
 									if not player.isPlayerDead() and monsters[x].getType() != 'Person':
 										# Player attacks monster
 										monsters[x].setHealth(monsters[x].getHealth() - (player.getAttack() * attackModifier))
-                    
-                    # if monster died and turned to human, call Home update
-                    if monsters[x].getHealth() <= 0:
-                      game.getCurrentHome().update()
+										
+										# if monster died and turned to human, call Home update
+										if monsters[x].getHealth() <= 0:
+											game.getCurrentHome().update(x)
+											game.update()
 
-                      
+
 									if not monsters[x].isMonsterDead():
 										# Monster Attacks player
 										player.setHealth(player.getHealth() - monsters[x].getAttack())
@@ -141,3 +143,8 @@ if __name__ == "__main__":
 
 		else:
 			print('ERROR: Please enter a command. Enter "help" for a list of commands.')
+
+	if game.player.getHealth() <= 0:
+		print('You died. Game Over!')
+	elif game.getTotalMonsters() <= 0:
+		print('You killed every monster in the neighborhood, making them all a person! You Win!')

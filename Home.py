@@ -2,29 +2,32 @@
 
 import Monster
 from random import randint
-import Observable
+from Observable import Observable
+from Observer import Observer
 
-class Home(Observable):
+class Home(Observable, Observer):
 
 	
 	"""'''''''''''''''''''''''''''''''''''''''''''''
 	Initialize the Home object
 	Creates a list of 10 random monsters for the Home
 	'''''''''''''''''''''''''''''''''''''''''''''"""
-	def __init__(self):
+	def __init__(self, game):
 		self.monsterList = []
 		for x in range(10):
 			tmp = randint(1, 5)
 			if tmp == 1:
-				self.monsterList.append(Monster.Zombie())
+				self.monsterList.append(Monster.Zombie(self))
 			elif tmp == 2:
-				self.monsterList.append(Monster.Vampire())
+				self.monsterList.append(Monster.Vampire(self))
 			elif tmp == 3:
-				self.monsterList.append(Monster.Ghoul())
+				self.monsterList.append(Monster.Ghoul(self))
 			elif tmp == 4:
-				self.monsterList.append(Monster.Werewolf())
+				self.monsterList.append(Monster.Werewolf(self))
 			elif tmp == 5:
-				self.monsterList.append(Monster.Person())
+				self.monsterList.append(Monster.Person(self))
+		super().__init__()
+		self.add_observer(game)
 
 
 	"""'''''''''''''''''''''''''''''''''''''''''''''
@@ -51,5 +54,9 @@ class Home(Observable):
 	'''''''''''''''''''''''''''''''''''''''''''''"""
 	def setList(self, newList):
 		self.monsterList = newList
+
+	def update(self, indexOfMonster):
+		self.monsterList[indexOfMonster] = Monster.Person(self)
+
 
 

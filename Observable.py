@@ -1,7 +1,7 @@
 class Observable(object):
 
 	def __init__(self):
-		self.obervers = []
+		self.observers = []
 
 	def add_observer(self, observer):
 		if not observer in self.observers:
@@ -13,3 +13,7 @@ class Observable(object):
 
 	def remove_all_observers(self):
 		self.obervers = []
+
+	def update(self, *args):
+                for observer in self.observers:
+                        observer.update()
