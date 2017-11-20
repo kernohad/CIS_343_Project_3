@@ -18,10 +18,8 @@ class Weapon(object):
 	# Checks if an instance has uses left. Returns true if it still has use left. Returns false if it has no more uses. TODO - Somewhere if false notify something. 
 	def hasUsesLeft(self):
 		if self.timesUsed < self.MAX_USE:
-			print("True")
 			return True
 		else:
-			print("False")
 			return False
 
 	def getName(self):

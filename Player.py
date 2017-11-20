@@ -24,16 +24,6 @@ class Player(object):
 				self.inventory.append(Weapon.NerdBombs())
 
 
-	def printInventory(self):
-		print()
-		print('------------------------- Inventory -------------------------')
-		print(' Key \t Name \t\t Attack Modifier \t Times Used')
-		print()
-		for x in self.inventory:
-			print(' ', self.inventory.index(x), '\t', x.getName(), '\t', x.getAttackModifier(), '\t\t\t', x.getTimesUsed(), '/', x.getMaxUse())
-		print('--------------------------------------------------------------')
-		print()
-
 	def getInventory(self):
 		return self.inventory
 
@@ -51,4 +41,11 @@ class Player(object):
 
 	def setAttack(self, newAttack):
 		self.attack = newAttack
+
+	def isPlayerDead(self):
+		if self.health <= 0:
+			print('You died')
+			return True
+		else:
+			return False
 
