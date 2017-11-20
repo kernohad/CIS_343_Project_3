@@ -1,8 +1,7 @@
 import Player
 import Neighborhood
-import Observer
 
-class Game(Observer):
+class Game(object):
 
 	def __init__(self):
 		self.player = Player.Player()
@@ -10,23 +9,14 @@ class Game(Observer):
 		self.currentCol = 0
 		self.currentRow = 0
 		self.currentHome = self.neighborhood.getGrid()[self.currentRow][self.currentCol]
-		self.totalMonsters = 0
 
-		# Loop through every Monster in every Home and count all non Person Monsters
-		for x in range(len(self.neighborhood.getGrid())):
-			for y in range(len(self.neighborhood.getGrid()[x])):
-				for z in range(len(self.neighborhood.getGrid()[x][y].getList())):
-					if self.neighborhood.getGrid()[x][y].getList()[z].getType() != 'Person':
-						self.totalMonsters += 1
-
-		
 	def isGameOver(self):
 		if self.player.getHealth() <= 0:
-			# Player Loses
+			# Player wins
 			return True
-		elif self.totalMonsters <= 0:
-			# Player Wins
-			return True
+		# elif all monsters are turned to people
+			# Player loses
+			#return True
 		else:
 			return False
 
@@ -72,15 +62,4 @@ class Game(Observer):
 	def getCurrentRow(self):
 		return self.currentRow
 
-	def getTotalMonsters(self):
-		return self.totalMonsters
-
-	def setTotalMonsters(self, newTotal):
-		self.totalMonsters = newTotal
-
-	def update(self):
-		self.totalMonsters -= 1
-
-a=Game()
-print(a.getTotalMonsters())
-
+		
