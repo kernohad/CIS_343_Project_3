@@ -29,6 +29,12 @@ class Monster(object):
 
 	def setHealth(self, newHealth):
 		self.health = newHealth
+
+	def isMonsterDead(self):
+		if self.health <= 0:
+			return True
+		else:
+			return False
 		
 
 """'''''''''''''''''''''''''''''''''''''''''''''
@@ -76,7 +82,6 @@ class Werewolf(Monster):
 		self.health = 200
 		self.attack = randint(0, 40)
 		self.monsterType = 'Werewolf'
-
 
 
 
