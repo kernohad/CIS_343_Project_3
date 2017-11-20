@@ -2,8 +2,9 @@
 
 import Monster
 from random import randint
+import Observable
 
-class Home(object):
+class Home(Observable):
 
 	
 	"""'''''''''''''''''''''''''''''''''''''''''''''

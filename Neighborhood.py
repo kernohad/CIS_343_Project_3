@@ -20,5 +20,8 @@ class Neighborhood(object):
 
 	def getGrid(self):
 		return self.grid
+
+	def getGridSize(self):
+		return self.GRID_SIZE
  
 
