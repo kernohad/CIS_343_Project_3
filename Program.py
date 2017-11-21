@@ -4,12 +4,13 @@ if __name__ == "__main__":
 
 	game = Game.Game()
 
-	# for x in range(len(game.getNeighborhood().getGrid())):
-	# 	for y in range(len(game.getNeighborhood().getGrid()[x])):
-	# 		super().__init__()
-	# 		game.getNeighborhood().getGrid()[x][y].add_observer(game)
-
- 
+	print()
+	print()
+	print('Welcome to the Haunted Neighborhood Simulation!')
+	print('It is your duty to find the best plan of attack to save the neighborhood!')
+	print('Remember, this is just a simulation, do not freak out if you die! Good luck!')
+	print()
+	print('Type "help" for a list of commands.')
 
 	while game.isGameOver() == False:
 
@@ -22,7 +23,17 @@ if __name__ == "__main__":
 
 				# Help command
 				if command[0] == 'help' or command[0] == 'Help':
-					print("This is help")
+					print("Commands:")
+					print()
+					print('move "direction"')
+					print('inventory')
+					print('view')
+					print('attack "key"')
+					print('quit')
+					print()
+					print('Note: "direction" can be north, south, east, or west.')
+					print('Note: "key" can be any key of a weapon in the inventory.')
+					print
 
 				# Move command
 				elif command[0] == 'move' or command[0] == 'Move':
